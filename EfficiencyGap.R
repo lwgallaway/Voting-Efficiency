@@ -20,5 +20,7 @@ EfficiencyGap<-function(dataframe){
     }
     
   }
-  return(results)
+  waste<-sum(results[,4])/sum(results[,5])
+  
+  return(waste)
 }
