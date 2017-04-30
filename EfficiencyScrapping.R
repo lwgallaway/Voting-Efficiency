@@ -22,7 +22,8 @@ EfficiencyScrapping<-function(){
     }
     formed<-ldply(tab)
     formed$x5<-i  #adding state to the data set
-    if(sum(formed$x3) < 1000){
+    x<-str_replace_all(formed$x3,fixed(","),"")
+    if(sum(as.numeric(x)) < 1000){  #error checking
       formed<-formed[,c(1,2,4,3,5)]
     }
     names(formed)<-c("Candidate","Vote Share","Vote Total","District","State")
