@@ -22,17 +22,19 @@ EfficiencyScrapping<-function(){
     }
     formed<-ldply(tab)
     formed$x5<-i  #adding state to the data set
-    x<-str_replace_all(formed$x3,fixed(","),"")
-    if(sum(as.numeric(x)) < 1000){  #error checking
-      formed<-formed[,c(1,2,4,3,5)]
-    }
     names(formed)<-c("Candidate","Vote Share","Vote Total","District","State")
+    x<-str_replace_all(formed$'Vote Total',fixed(","),"")
+    v<-sum(as.numeric(x),na.rm = TRUE)
+    if(v < 1000){  #error checking
+      formed<-formed[,c(1,2,4,3,5)];
+      names(formed)<-c("Candidate","Vote Share","Vote Total","District","State")
+    }
     if(is.null(finalDF) == TRUE){ #combining into a large data frame
       finalDF<-formed
     } else {
       finalDF<-rbind(finalDF,formed)
     }
-    Sys.sleep(3)  #sleep function to not overwhelm the site
+    Sys.sleep(2)  #sleep function to not overwhelm the site
   }
   
   return(finalDF)
