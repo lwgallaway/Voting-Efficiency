@@ -13,7 +13,7 @@ EfficiencyScrapping<-function(){
   finalDF<-NULL
   
   for(i in state){
-    print(i)
+    #print(i)
     newURL<-paste(URL,i,"/",sep = "")  #adding state name to URL
     dat<-httr::GET(newURL)
     tab<-rvest::html_table(content(dat))
