@@ -7,16 +7,16 @@ EfficiencyGap<-function(dataframe){
   
   for(i in 1:h){    
     tot<-sum(dataframe[i,c(2:4)])  #sum of the votes in that district
-    results[i,5]<-tot
+    results[i,5]<-tot #writing the vote total to the results frame
     if(dataframe[i,2] > dataframe[i,3]){ #Reps win the district
-      results[i,2]<-(dataframe[i,2] - (tot+1)/2)
-      results[i,3]<-dataframe[i,3]
-      results[i,4]<-results[i,2] - results[i,3] #Negative means D votes wasted, + R votes
+      results[i,2]<-(dataframe[i,2] - (tot+1)/2)   #takes the republic votes minus half the total plus 1 - should be  positive number
+      results[i,3]<-dataframe[i,3]  #all of the D's votes are wasted
+      results[i,4]<-results[i,2] - results[i,3] #Negative means D votes wasted, + R votes wasted.
     }
     if(dataframe[i,3] > dataframe[i,2]){ #Dems win the district
-      results[i,2]<-dataframe[i,2] 
-      results[i,3]<-(dataframe[i,3] - (tot+1)/2)
-      results[i,4]<-results[i,2] - results[i,3]
+      results[i,2]<-dataframe[i,2] #all the Republicans votes are wasted
+      results[i,3]<-(dataframe[i,3] - (tot+1)/2) #takes D votes minus half the vote toatl, should be positive.
+      results[i,4]<-results[i,2] - results[i,3] #Negative means D votes wasted, + R votes wasted.
     }
     
   }
