@@ -15,11 +15,13 @@ EfficiencyShell<-function(){
     processed<<-EfficiencyScrapTransform(USHousevoting)
     print('Please see Data Frame USHousevoting for Raw voting information')
     print("Please print the list \'processed\' to see the votes by distrct per state ")
+    EfficiencyShell()
   }
   if(n==2){
     print("please visit the site:")
     print("https://www.brennancenter.org/sites/default/files/legal-work/How_the_Efficiency_Gap_Standard_Works.pdf")
     print("for more information about the Efficiency Gap method for measuring Gerrymandering")
+    EfficiencyShell()
   }
   if(n == 3){
     q<-names(processed)
@@ -30,5 +32,6 @@ EfficiencyShell<-function(){
     print(StateVotingEfficiency)
     print("Please See the StateVotingEfficiency data frame for the information")
     StateVotingEfficiency<<-StateVotingEfficiency
+    EfficiencyShell()
   }
 }
