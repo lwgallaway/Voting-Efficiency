@@ -10,6 +10,7 @@ EfficiencyScrapTransform<-function(scrapDF){
   scrapDF[,3]<-as.numeric(scrapDF[,3])
   scrapDF[is.na(scrapDF)]<-0  #changes all NA's to zeros to fixed uncontested districts
   
+  print("Data is being Collected")
   proList = split(1:length(state),list(state))
   t<-0
   for(i in state){
@@ -30,6 +31,7 @@ EfficiencyScrapTransform<-function(scrapDF){
     }
     proList[[t]]<-EF_frame
   }
+  print("Data Collection Complete")
   return(proList)
   
 }
