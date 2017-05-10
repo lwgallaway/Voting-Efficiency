@@ -11,6 +11,7 @@ EfficiencyScrapping<-function(){
   URL<-"http://www.politico.com/2016-election/results/map/house/"
   
   finalDF<-NULL
+  print("Data is being Collected")
   
   for(i in state){
     #print(i)
@@ -36,6 +37,5 @@ EfficiencyScrapping<-function(){
     }
     Sys.sleep(2)  #sleep function to not overwhelm the site
   }
-  
   return(finalDF)
 }
