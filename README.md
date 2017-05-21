@@ -9,5 +9,6 @@ All voting data collected for this project is from Polictico.com, who sourced th
 
 Analysis Gaps: 
 1) This analysis only covers the Gap between Republicans and Democrats, not independents. Independent voting was considered in the voting totals for each district however.
+
 2) Uncontested seats - In this form of the scripts, they do not affect the results other than to mask whatever voting would normally take place in that district. They are treated effectively as zero votes for both parties, so no change in net votes.
 
