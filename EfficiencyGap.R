@@ -1,3 +1,20 @@
+#' A Gerrymandering Function
+#'
+#' This function is for the determining the voting efficiency in a particular state.
+#' returns a single percentage for the state. Anything greater than +/- 8 indicates 
+#' gerrymandering in a state. Negative for republican, postive for democrat.
+#' @param dataframe This should be a dataframe containing the district number, republican
+#' votes, democrat votes and independent votes, in that order. 
+#' @keywords gerrymandering
+#' @export
+#' @examples
+#' EfficiencyGap(OhioDistricts)
+#' 
+#' dataframe ex.
+#' district  R_votes D_votes I_votes
+#' 1          2000    1500     0
+#' 2          1500    2500     200
+
 EfficiencyGap<-function(dataframe){
   #reference 
   #https://www.brennancenter.org/sites/default/files/legal-work/How_the_Efficiency_Gap_Standard_Works.pdf
