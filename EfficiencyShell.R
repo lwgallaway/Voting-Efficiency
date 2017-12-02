@@ -3,7 +3,6 @@
 #' This function is to provide an interface into using this package. instead of calling 
 #' each script independently it allows for the user to select option on how they would 
 #' like to use the information.
-#' @param
 #' @keywords gerrymandering
 #' @export
 #' @examples

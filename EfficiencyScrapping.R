@@ -3,7 +3,6 @@
 #' This function is to allow the user to scrape the data from a website. This
 #' provides all the raw data for determining the extent of gerrymandering during
 #' the 2016 election.
-#' @param
 #' @keywords gerrymandering, web scrapping
 #' @export
 #' @examples
